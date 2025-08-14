@@ -1,0 +1,1047 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Hugs in a Bag</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-yellow: #F4D06F;
+            --primary-coral: #D5896F;
+            --secondary-mint: #9DD9D2;
+            --secondary-beige: #DAB785;
+            --dark-blue: #04395E;
+            --darker-blue: #031D44;
+            --white: #FFFFFF;
+            --off-white: #FFF9F0;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-blue);
+            background-color: var(--off-white);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo a {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--dark-blue);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary-coral);
+            border-bottom-color: var(--primary-coral);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .donate-btn {
+            background-color: var(--primary-yellow);
+            color: var(--dark-blue);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .donate-btn:hover {
+            background-color: var(--primary-coral);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--dark-blue);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-yellow) 0%, var(--primary-coral) 100%);
+            padding: 4rem 0;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+        }
+
+        /* Our Story Section */
+        .our-story {
+            padding: 5rem 0;
+            background-color: var(--white);
+        }
+
+        .our-story h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--dark-blue);
+            margin-bottom: 3rem;
+        }
+
+        .story-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .story-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--darker-blue);
+            line-height: 1.8;
+        }
+
+        /* Teams Overview */
+        .teams-overview {
+            padding: 5rem 0;
+            background-color: var(--off-white);
+        }
+
+        .teams-overview h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--dark-blue);
+            margin-bottom: 3rem;
+        }
+
+        .teams-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-card {
+            background-color: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .team-card h3 {
+            font-size: 1.5rem;
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+        }
+
+        .team-card p {
+            color: var(--darker-blue);
+            line-height: 1.6;
+        }
+
+        /* Team Members Section */
+        .team-members {
+            padding: 5rem 0;
+            background-color: var(--white);
+        }
+
+        .team-members h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--dark-blue);
+            margin-bottom: 3rem;
+        }
+
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .member-card {
+            background-color: var(--off-white);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .member-card:hover {
+            border-color: var(--primary-coral);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .member-photo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--primary-yellow);
+            background-color: var(--secondary-mint);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .member-card h3 {
+            font-size: 1.5rem;
+            color: var(--dark-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .member-role {
+            color: var(--primary-coral);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .member-bio {
+            color: var(--darker-blue);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--darker-blue);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-yellow);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .members-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .teams-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Hugs in a Bag 💝</a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link active">About Us</a>
+                <a href="portfolio.html" class="nav-link">Our Work</a>
+                <a href="get-involved.html" class="nav-link">Get Involved</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-right">
+                <a href="#" class="donate-btn">Donate</a>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>About Us</h1>
+        <p>Meet the hearts behind the hugs</p>
+    </section>
+
+    <!-- Our Story -->
+    <section class="our-story">
+        <div class="container">
+            <h2>Our Story</h2>
+            <div class="story-content">
+                <p>Hugs in a Bag began with a simple idea: no one should feel alone during their hospital stay. What started as a small group of students making cards has grown into an international movement of compassion.</p>
+                <p>Founded in [Year], we've expanded from a handful of volunteers to a global network of caring individuals who believe in the power of human connection. Every craft we create, every note we write, carries with it the warmth of human kindness.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teams Overview -->
+    <section class="teams-overview">
+        <div class="container">
+            <h2>Our Teams</h2>
+            <div class="teams-grid">
+                <div class="team-card">
+                    <div class="team-icon">📝</div>
+                    <h3>Note Writers & Translators</h3>
+                    <p>Crafting heartfelt messages in multiple languages to ensure every patient feels understood and cared for.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-icon">🎨</div>
+                    <h3>Designers & Crafters</h3>
+                    <p>Creating beautiful handmade items including cards, knitted goods, and small toys to bring comfort and joy.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-icon">💻</div>
+                    <h3>Project Reporting & Website Development</h3>
+                    <p>Documenting our impact and maintaining our digital presence to connect with volunteers and hospitals worldwide.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Members -->
+    <section class="team-members">
+        <div class="container">
+            <h2>Meet Our Team</h2>
+            <div class="members-grid">
+                <div class="member-card">
+                    <div class="member-photo">
+                        👤
+                    </div>
+                    <h3>Vicky Zheng</h3>
+                    <p class="member-role">Founder</p>
+                    <p class="member-bio">I enjoy seeing how a small act can bring a smile to someone's face. In my free time, I like swimming, dancing, watching sunsets, and taking long walks with my dog!</p>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-photo">
+                        👤
+                    </div>
+                    <h3>Zhouyuan Wu(Emily)</h3>
+                    <p class="member-role">website lead & translator</p>
+                    <p class="member-bio">I enjoy helping people around the world by taking action using my skills such as website building and translating. My hobbies are drawing, photography, and music. I also enjoy watching movies and reading!</p>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-photo">
+                        👤
+                    </div>
+                    <h3>Ivy Li</h3>
+                    <p class="member-role">Project Reporting</p>
+                    <p class="member-bio">I like helping small communities in need and knowing how they live. My hobbies include playing clarinet, listening to kpop music, and journaling my thoughts.</p>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-photo">
+                        👤
+                    </div>
+                    <h3>Tze Kee Chua (Kloe)</h3>
+                    <p class="member-role">Messages & Translations</p>
+                    <p class="member-bio">I enjoy helping people in things they're weak at, trying to make a small difference to my society.I enjoy reading short novels and gallery hopping in my free time!</p>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-photo">
+                        👤
+                    </div>
+                    <h3>[Name]</h3>
+                    <p class="member-role">[placeholder role]</p>
+                    <p class="member-bio">[placeholder bio]</p>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-photo">
+                        👤
+                    </div>
+                    <h3>[Name]</h3>
+                    <p class="member-role">[placeholder role]</p>
+                    <p class="member-bio">[placeholder bio]</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Hugs in a Bag - Packed with Love. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Hugs in a Bag</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-yellow: #F4D06F;
+            --primary-coral: #D5896F;
+            --secondary-mint: #9DD9D2;
+            --secondary-beige: #DAB785;
+            --dark-blue: #04395E;
+            --darker-blue: #031D44;
+            --white: #FFFFFF;
+            --off-white: #FFF9F0;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-blue);
+            background-color: var(--off-white);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo a {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--dark-blue);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary-coral);
+            border-bottom-color: var(--primary-coral);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .donate-btn {
+            background-color: var(--primary-yellow);
+            color: var(--dark-blue);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .donate-btn:hover {
+            background-color: var(--primary-coral);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--dark-blue);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-yellow) 0%, var(--primary-coral) 100%);
+            padding: 4rem 0;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+        }
+
+        /* Our Story Section */
+        .our-story {
+            padding: 5rem 0;
+            background-color: var(--white);
+        }
+
+        .our-story h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--dark-blue);
+            margin-bottom: 3rem;
+        }
+
+        .story-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .story-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--darker-blue);
+            line-height: 1.8;
+        }
+
+        /* Teams Overview */
+        .teams-overview {
+            padding: 5rem 0;
+            background-color: var(--off-white);
+        }
+
+        .teams-overview h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--dark-blue);
+            margin-bottom: 3rem;
+        }
+
+        .teams-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-card {
+            background-color: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .team-card h3 {
+            font-size: 1.5rem;
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+        }
+
+        .team-card p {
+            color: var(--darker-blue);
+            line-height: 1.6;
+        }
+
+        /* Team Members Section */
+        .team-members {
+            padding: 5rem 0;
+            background-color: var(--white);
+        }
+
+        .team-members h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--dark-blue);
+            margin-bottom: 3rem;
+        }
+
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .member-card {
+            background-color: var(--off-white);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .member-card:hover {
+            border-color: var(--primary-coral);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .member-photo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--primary-yellow);
+            background-color: var(--secondary-mint);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .member-card h3 {
+            font-size: 1.5rem;
+            color: var(--dark-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .member-role {
+            color: var(--primary-coral);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .member-bio {
+            color: var(--darker-blue);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--darker-blue);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-yellow);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .members-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .teams-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Hugs in a Bag 💝</a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link active">About Us</a>
+                <a href="portfolio.html" class="nav-link">Our Work</a>
+                <a href="get-involved.html" class="nav-link">Get Involved</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-right">
+                <a href="#" class="donate-btn">Donate</a>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>About Us</h1>
+        <p>Meet the hearts behind the hugs</p>
+    </section>
+
+    <!-- Our Story -->
+    <section class="our-story">
+        <div class="container">
+            <h2>Our Story</h2>
+            <div class="story-content">
+                <p>Hugs in a Bag began with a simple idea: no one should feel alone during their hospital stay. What started as a small group of students making cards has grown into an international movement of compassion.</p>
+                <p>Founded in [Year], we've expanded from a handful of volunteers to a global network of caring individuals who believe in the power of human connection. Every craft we create, every note we write, carries with it the warmth of human kindness.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teams Overview -->
+    <section class="teams-overview">
+        <div class="container">
+            <h2>Our Teams</h2>
+            <div class="teams-grid">
+                <div class="team-card">
+                    <div class="team-icon">📝</div>
+                    <h3>Note Writers & Translators</h3>
+                    <p>Crafting heartfelt messages in multiple languages to ensure every patient feels understood and cared for.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-icon">🎨</div>
+                    <h3>Designers & Crafters</h3>
+                    <p>Creating beautiful handmade items including cards, knitted goods, and small toys to bring comfort and joy.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-icon">💻</div>
+                    <h3>Project Reporting & Website Development</h3>
+                    <p>Documenting our impact and maintaining our digital presence to connect with volunteers and hospitals worldwide.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Members -->
+    <section class="team-members">
+        <div class="container">
+            <h2>Meet Our Team</h2>
+            <div class="members-grid">
+                <div class="member-card">
+                    <div class="member-photo">
+                        👤
+                    </div>
+                    <h3>Vicky Zheng</h3>
+                    <p class="member-role">Founder</p>
+                    <p class="member-bio">I enjoy seeing how a small act can bring a smile to someone's face. In my free time, I like swimming, dancing, watching sunsets, and taking long walks with my dog!</p>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-photo">
+                        👤
+                    </div>
+                    <h3>Zhouyuan Wu(Emily)</h3>
+                    <p class="member-role">website lead & translator</p>
+                    <p class="member-bio">I enjoy helping people around the world by taking action using my skills such as website building and translating. My hobbies are drawing, photography, and music. I also enjoy watching movies and reading!</p>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-photo">
+                        👤
+                    </div>
+                    <h3>Ivy Li</h3>
+                    <p class="member-role">Project Reporting</p>
+                    <p class="member-bio">I like helping small communities in need and knowing how they live. My hobbies include playing clarinet, listening to kpop music, and journaling my thoughts.</p>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-photo">
+                        👤
+                    </div>
+                    <h3>Tze Kee Chua (Kloe)</h3>
+                    <p class="member-role">Messages & Translations</p>
+                    <p class="member-bio">I enjoy helping people in things they're weak at, trying to make a small difference to my society.I enjoy reading short novels and gallery hopping in my free time!</p>
+                </div>
+                
+                <div class="member-card">
+                    <div class="member-photo">
+                        👤
+                    </div>
+                    <h3>[Name]</h3>
+                    <p class="member-role">[placeholder role]</p>
+                    <p class="member-bio">[placeholder bio]</p>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-photo">
+                        👤
+                    </div>
+                    <h3>[Name]</h3>
+                    <p class="member-role">[placeholder role]</p>
+                    <p class="member-bio">[placeholder bio]</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Hugs in a Bag - Packed with Love. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">Xiaohongshu</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+>>>>>>> a20bc5c (finish first website draft)
+</html>

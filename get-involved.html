@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Involved - Hugs in a Bag</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-yellow: #F4D06F;
+            --primary-coral: #D5896F;
+            --secondary-mint: #9DD9D2;
+            --secondary-beige: #DAB785;
+            --dark-blue: #04395E;
+            --darker-blue: #031D44;
+            --white: #FFFFFF;
+            --off-white: #FFF9F0;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-blue);
+            background-color: var(--off-white);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo a {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--dark-blue);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary-coral);
+            border-bottom-color: var(--primary-coral);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .donate-btn {
+            background-color: var(--primary-yellow);
+            color: var(--dark-blue);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .donate-btn:hover {
+            background-color: var(--primary-coral);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--dark-blue);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-yellow) 0%, var(--primary-coral) 100%);
+            padding: 4rem 0;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+        }
+
+        /* Volunteer Intro Section */
+        .volunteer-intro {
+            padding: 5rem 0;
+            background-color: var(--white);
+        }
+
+        .intro-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .intro-content h2 {
+            font-size: 2.5rem;
+            color: var(--dark-blue);
+            margin-bottom: 2rem;
+        }
+
+        .intro-content p {
+            font-size: 1.1rem;
+            color: var(--darker-blue);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        /* Volunteer Opportunities */
+        .volunteer-opportunities {
+            padding: 5rem 0;
+            background-color: var(--off-white);
+        }
+
+        .volunteer-opportunities h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--dark-blue);
+            margin-bottom: 3rem;
+        }
+
+        .opportunities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .opportunity-card {
+            background-color: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary-coral);
+        }
+
+        .opportunity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .opportunity-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .opportunity-card h3 {
+            font-size: 1.75rem;
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+        }
+
+        .opportunity-details {
+            margin-top: 1.5rem;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            color: var(--darker-blue);
+        }
+
+        .detail-icon {
+            margin-right: 0.75rem;
+            color: var(--primary-coral);
+            font-size: 1.2rem;
+            margin-top: 0.2rem;
+        }
+
+        .skills-list {
+            list-style: none;
+            margin-top: 0.5rem;
+            margin-left: 1.5rem;
+        }
+
+        .skills-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--darker-blue);
+        }
+
+        .skills-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-coral);
+            font-weight: bold;
+        }
+
+        /* Application Section */
+        .application-section {
+            padding: 5rem 0;
+            background-color: var(--white);
+        }
+
+        .application-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--dark-blue);
+            margin-bottom: 3rem;
+        }
+
+        .application-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .google-form-container {
+            background-color: var(--off-white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 3rem;
+        }
+
+        .form-placeholder {
+            background-color: var(--secondary-mint);
+            height: 200px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .apply-button {
+            display: inline-block;
+            background-color: var(--primary-coral);
+            color: var(--white);
+            padding: 1.25rem 3rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(213, 137, 111, 0.3);
+        }
+
+        .apply-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(213, 137, 111, 0.4);
+            background-color: var(--primary-yellow);
+            color: var(--dark-blue);
+        }
+
+        /* Other Ways to Help */
+        .other-ways {
+            padding: 5rem 0;
+            background-color: var(--off-white);
+        }
+
+        .other-ways h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--dark-blue);
+            margin-bottom: 3rem;
+        }
+
+        .ways-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .way-card {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .way-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .way-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .way-card h3 {
+            font-size: 1.5rem;
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+        }
+
+        .way-card p {
+            color: var(--darker-blue);
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--darker-blue);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-yellow);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .opportunities-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ways-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Hugs in a Bag 💝</a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="portfolio.html" class="nav-link">Our Work</a>
+                <a href="get-involved.html" class="nav-link active">Get Involved</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-right">
+                <a href="#" class="donate-btn">Donate</a>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Get Involved</h1>
+        <p>Join our mission to spread warmth and comfort</p>
+    </section>
+
+    <!-- Volunteer Introduction -->
+    <section class="volunteer-intro">
+        <div class="container">
+            <div class="intro-content">
+                <h2>Make a Difference Today</h2>
+                <p>Thank you for your interest in joining Hugs in a Bag - Packed with Love! As a volunteer-driven initiative, we rely on compassionate individuals like you to bring comfort to hospital patients around the world.</p>
+                <p>Whether you're crafty, love writing, speak multiple languages, or have technical skills, there's a place for you in our community. Every contribution, no matter how small, makes a meaningful impact in someone's healing journey.</p>
+                <p>You can volunteer as many time as you want. No pressure on the time commitment! Even small actions are great help to the community.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteer Opportunities -->
+    <section class="volunteer-opportunities">
+        <div class="container">
+            <h2>Volunteer Opportunities</h2>
+            <div class="opportunities-grid">
+                <!-- Note Writers & Translators -->
+                <div class="opportunity-card">
+                    <span class="opportunity-icon">📝</span>
+                    <h3>Note Writers & Translators</h3>
+                    <p>Create heartfelt messages that bring hope and comfort to patients. Help us reach more people by translating notes into different languages.</p>
+                    <div class="opportunity-details">
+                        <div class="detail-item">
+                            <span class="detail-icon">⏰ </span>
+                            <div>
+                                <strong>Recommended Time Commitment:</strong> 2-3 hours per week
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">💡</span>
+                            <div>
+                                <strong>Skills Needed:</strong>
+                                <ul class="skills-list">
+                                    <li>Compassionate writing</li>
+                                    <li>Creativity and empathy</li>
+                                    <li>Language skills (for translators)</li>
+                                    <li>Cultural sensitivity</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">🎯</span>
+                            <div>
+                                <strong>Responsibilities:</strong> Write uplifting messages, translate existing notes, participate in monthly writing workshops
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Designers & Crafters -->
+                <div class="opportunity-card">
+                    <span class="opportunity-icon">🎨</span>
+                    <h3>Designers & Crafters</h3>
+                    <p>Use your creative skills to design beautiful cards and craft handmade items that bring joy to patients during their recovery.</p>
+                    <div class="opportunity-details">
+                        <div class="detail-item">
+                            <span class="detail-icon">⏰</span>
+                            <div>
+                                <strong> Recommended Time Commitment:</strong> 3-5 hours per week
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">💡</span>
+                            <div>
+                                <strong>Skills Welcomed:</strong>
+                                <ul class="skills-list">
+                                    <li>Card making and paper crafts</li>
+                                    <li>Knitting or crocheting</li>
+                                    <li>Sewing and fabric crafts</li>
+                                    <li>Digital design (optional)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">🎯</span>
+                            <div>
+                                <strong>Responsibilities:</strong> Create handmade items, participate in crafting sessions, help develop new craft ideas
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Reporting & Website -->
+                <div class="opportunity-card">
+                    <span class="opportunity-icon">💻</span>
+                    <h3>Project Reporting & Website Development</h3>
+                    <p>Help us share our story and impact through digital platforms, documentation, and technical development.</p>
+                    <div class="opportunity-details">
+                        <div class="detail-item">
+                            <span class="detail-icon">⏰</span>
+                            <div>
+                                <strong>Recommended Time Commitment:</strong> 3-4 hours per week
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">💡</span>
+                            <div>
+                                <strong>Skills Needed:</strong>
+                                <ul class="skills-list">
+                                    <li>Web development (HTML/CSS/JS)</li>
+                                    <li>Content writing</li>
+                                    <li>Data analysis and reporting</li>
+                                    <li>Social media management</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">🎯</span>
+                            <div>
+                                <strong>Responsibilities:</strong> Maintain website, track impact metrics, create reports, manage online presence
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Section -->
+    <section class="application-section">
+        <div class="container">
+            <h2>Ready to Join Us?</h2>
+            <div class="application-container">
+                <div class="google-form-container">
+                    <p style="margin-bottom: 2rem; color: var(--darker-blue);">Fill out our volunteer application form to get started. We'll review your application and get back to you within 3-5 business days.</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScuJ8hw6fuPMV3H5o33mW7CYTTwS2Vn4Hh4WwNN3BFOgOnn9w/viewform" class="apply-button" target="_blank">Apply Now</a>
+                </div>
+                <p style="font-size: 1.1rem; color: var(--darker-blue);">Have questions before applying? Feel free to <a href="contact.html" style="color: var(--primary-coral); text-decoration: none;">contact us</a>!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Other Ways to Help -->
+    <section class="other-ways">
+        <div class="container">
+            <h2>Other Ways to Help</h2>
+            <div class="ways-grid">
+                <div class="way-card">
+                    <span class="way-icon">📦</span>
+                    <h3>Donate Materials</h3>
+                    <p>Support our mission by donating craft supplies, yarn, paper, or other materials we use to create comfort kits.</p>
+                </div>
+                <div class="way-card">
+                    <span class="way-icon">🏥</span>
+                    <h3>Connect Us with Hospitals</h3>
+                    <p>Know a hospital that would benefit from our comfort kits? Help us expand our reach by making introductions.</p>
+                </div>
+                <div class="way-card">
+                    <span class="way-icon">📢</span>
+                    <h3>Share Our Mission</h3>
+                    <p>Spread the word about Hugs in a Bag on social media and help us reach more volunteers and hospitals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Hugs in a Bag - Packed with Love. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">Xiaohongshu</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

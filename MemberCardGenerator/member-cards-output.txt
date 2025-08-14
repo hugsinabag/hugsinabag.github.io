@@ -1,0 +1,99 @@
+                <div class="member-card">
+                    <div class="member-photo">
+                        👤
+                    </div>
+                    <h3>Vicky Zheng</h3>
+                    <p class="member-role">Founder</p>
+                    <p class="member-bio">I enjoy seeing how a small act can bring a smile to someone&#39;s face. In my free time, I like swimming, dancing, watching sunsets, and taking long walks with my dog!</p>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-photo">
+                        👤
+                    </div>
+                    <h3>Ivy Li</h3>
+                    <p class="member-role">Project Reporting</p>
+                    <p class="member-bio">I like helping small communities in need and knowing how they live. My hobbies include playing clarinet, listening to kpop music, and journaling my thoughts.</p>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-photo">
+                        👤
+                    </div>
+                    <h3>Tze Kee Chua (Kloe)</h3>
+                    <p class="member-role">Messages &amp; Translations</p>
+                    <p class="member-bio">I enjoy helping people in things they&#39;re weak at, trying to make a small difference to my society.I enjoy reading short novels and gallery hopping in my free time!</p>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-photo">
+                        👤
+                    </div>
+                    <h3>Victoria Cao</h3>
+                    <p class="member-role">Messages &amp; Translations</p>
+                    <p class="member-bio">I like Latin dance, jazz dance, listening to music and reading novels.</p>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-photo">
+                        👤
+                    </div>
+                    <h3>Tingting Ruan</h3>
+                    <p class="member-role">Messages &amp; Translations, Outreach</p>
+                    <p class="member-bio">manicure, dancing, pilates, listen to music, and volunteering at hospital</p>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-photo">
+                        👤
+                    </div>
+                    <h3>Zhouyuan Wu (Emily)</h3>
+                    <p class="member-role">Project Reporting, Messages &amp; Translations</p>
+                    <p class="member-bio">My hobbies are drawing, photography, and music. I also enjoy watching movies and reading!</p>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-photo">
+                        👤
+                    </div>
+                    <h3>Kim Hung Low</h3>
+                    <p class="member-role">Messages &amp; Translations , Designs and Crafts, Design &amp; Crafts</p>
+                    <p class="member-bio">I enjoy watching movies during my free time, sometimes I would go hiking and play basketball with my friends.</p>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-photo">
+                        👤
+                    </div>
+                    <h3>Rachael Sung</h3>
+                    <p class="member-role">Messages &amp; Translations</p>
+                    <p class="member-bio">I enjoy helping out whenever I can, teaching, playing the violin, tennis, and reading.</p>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-photo">
+                        👤
+                    </div>
+                    <h3>Emily Gao</h3>
+                    <p class="member-role">Design &amp; Crafts, Messages &amp; Translations</p>
+                    <p class="member-bio"></p>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-photo">
+                        👤
+                    </div>
+                    <h3>Lydia Gong</h3>
+                    <p class="member-role">Messages &amp; Translations</p>
+                    <p class="member-bio"></p>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-photo">
+                        👤
+                    </div>
+                    <h3>Nolia Chen</h3>
+                    <p class="member-role">Design &amp; Crafts</p>
+                    <p class="member-bio"></p>
+                </div>
+

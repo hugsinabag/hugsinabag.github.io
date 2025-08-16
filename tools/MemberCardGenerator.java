@@ -1,15 +1,18 @@
 import java.io.*;
 import java.util.*;
-/*This tool reads member info in members.csv to generate the code for member section of about.html, and stores it into member-cards-output.txt
+/*This tool reads member info in HiaB-Team-Info - Sheet1.csv to generate the code for member section of about.html
 Using guide:
-1) download the latest csv update from https://docs.google.com/spreadsheets/d/1NkuFuSVa_5iLQlFsg63C-WsyWvCe_EMYNSIt49TKx3M/edit?gid=0#gid=0 and rename into members.csv
-2) run MemberCardGenerator.java
-3) manually check the generated member-cards-output.txt and paste into about.html
+1) download the latest csv update from https://docs.google.com/spreadsheets/d/1NkuFuSVa_5iLQlFsg63C-WsyWvCe_EMYNSIt49TKx3M/edit?gid=0#gid=0 
+   (no need to rename - keep as "HiaB-Team-Info - Sheet1.csv")
+2) ensure member photos are in ../images/HugsInABag-member-photos/ folder with naming pattern: firstname-lastname.jpg
+3) run MemberCardGenerator.java
+4) HTML will be automatically updated with member cards and photos
 */
 public class MemberCardGenerator {
-    private static final String CSV_PATH = "members.csv";  // In same folder as Java file
+    private static final String CSV_PATH = "HiaB-Team-Info - Sheet1.csv";  // Updated CSV filename
     private static final String HTML_PATH = "../about.html"; // Up one level
     private static final String TEST_HTML_PATH = "test.html"; // In same folder
+    private static final String IMAGES_FOLDER = "../images/HugsInABag-member-photos/"; // Updated folder name
     
     public static void main(String[] args) {
         try {
@@ -92,7 +95,7 @@ public class MemberCardGenerator {
         String beforeMarker = fileContent.substring(0, insertStart);
         String afterMarker = fileContent.substring(endIndex);
         
-        // Build new file content - FIXED: Removed extra spaces
+        // Build new file content
         String newFileContent = beforeMarker + "\n" + newContent + afterMarker;
         
         // Write back to file
@@ -125,21 +128,47 @@ public class MemberCardGenerator {
     }
     
     private static String generateMemberCard(String name, String role, String bio) {
-        // Escape HTML special characters
-        name = escapeHtml(name);
-        role = escapeHtml(role);
-        bio = escapeHtml(bio);
+        // Escape HTML special characters FIRST (before using for filename)
+        String escapedName = escapeHtml(name);
+        String escapedRole = escapeHtml(role);
+        String escapedBio = escapeHtml(bio);
+        
+        // Remove parentheses and their contents for filename generation
+        String cleanName = name.replaceAll("\\s*\\([^)]*\\)", "").trim();
+        
+        // Generate image filename based on cleaned name
+        String imageFilename = cleanName.toLowerCase()
+            .replace(" ", "-")
+            .replace(".", "")
+            .replace("'", "")
+            .replace("&", "and")
+            .replace(",", "")
+            + ".jpg";
+        
+        // Check if image exists
+        File imageFile = new File(IMAGES_FOLDER + imageFilename);
+        String photoContent;
+        
+        if (imageFile.exists()) {
+            // Use the image path relative to the HTML file location
+            String imagePath = "images/HugsInABag-member-photos/" + imageFilename;
+            photoContent = String.format("<img src=\"%s\" alt=\"%s\">", imagePath, escapedName);
+            System.out.println("✓ Found image for " + name + ": " + imageFilename);
+        } else {
+            photoContent = "👤"; // Default emoji if no photo
+            System.out.println("✗ No image found for " + name + " (looked for: " + imageFilename + ")");
+        }
         
         return String.format(
             "                <div class=\"member-card\">\n" +
             "                    <div class=\"member-photo\">\n" +
-            "                        👤\n" +
+            "                        %s\n" +
             "                    </div>\n" +
             "                    <h3>%s</h3>\n" +
             "                    <p class=\"member-role\">%s</p>\n" +
             "                    <p class=\"member-bio\">%s</p>\n" +
             "                </div>",
-            name, role, bio
+            photoContent, escapedName, escapedRole, escapedBio
         );
     }
     

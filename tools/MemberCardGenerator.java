@@ -128,7 +128,7 @@ public class MemberCardGenerator {
     }
     
     private static String generateMemberCard(String name, String role, String bio) {
-        // Escape HTML special characters FIRST (before using for filename)
+        // Escape HTML special characters FIRST
         String escapedName = escapeHtml(name);
         String escapedRole = escapeHtml(role);
         String escapedBio = escapeHtml(bio);
@@ -145,19 +145,12 @@ public class MemberCardGenerator {
             .replace(",", "")
             + ".jpg";
         
-        // Check if image exists
-        File imageFile = new File(IMAGES_FOLDER + imageFilename);
-        String photoContent;
+        // ALWAYS use the image tag (no checking if file exists)
+        String imagePath = "images/HugsInABag-member-photos/" + imageFilename;
+        String photoContent = String.format("<img src=\"%s\" alt=\"%s\">", imagePath, escapedName);
         
-        if (imageFile.exists()) {
-            // Use the image path relative to the HTML file location
-            String imagePath = "images/HugsInABag-member-photos/" + imageFilename;
-            photoContent = String.format("<img src=\"%s\" alt=\"%s\">", imagePath, escapedName);
-            System.out.println("✓ Found image for " + name + ": " + imageFilename);
-        } else {
-            photoContent = "👤"; // Default emoji if no photo
-            System.out.println("✗ No image found for " + name + " (looked for: " + imageFilename + ")");
-        }
+        // Optional: Still log what filename it expects
+        System.out.println("Expecting image: " + imageFilename + " for " + name);
         
         return String.format(
             "                <div class=\"member-card\">\n" +
@@ -171,6 +164,7 @@ public class MemberCardGenerator {
             photoContent, escapedName, escapedRole, escapedBio
         );
     }
+
     
     private static String escapeHtml(String text) {
         if (text == null) return "";

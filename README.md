@@ -142,6 +142,11 @@ In `contact.html`, add new FAQ items following the existing pattern with the acc
 - **Broken layout**: Validate HTML for unclosed tags
 - **Images stretched**: Ensure photos are square or near-square ratio
 
+## After Deploying Updates
+If changes don't appear immediately:
+1. Wait 5-10 minutes for GitHub Pages to update
+2. Hard refresh: Ctrl+Shift+R (Windows) or Cmd+Shift+R (Mac)
+
 ## 📞 Need Help?
 
 - Check existing code patterns in the HTML files
@@ -160,5 +165,3 @@ git push                     # Upload changes
 ```
 
 ---
-
-**Remember**: The website should feel warm, welcoming, and handcrafted - not generic or overly technical. Keep the mission of bringing comfort to patients at the heart of every update! 💝

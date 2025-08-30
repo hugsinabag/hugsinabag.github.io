@@ -122,6 +122,46 @@ In `contact.html`, update placeholders:
 ### Add FAQ Questions
 In `contact.html`, add new FAQ items following the existing pattern with the accordion structure.
 
+
+## 📰 Updating Worklog/Blog Posts
+
+### File Structure
+```
+worklog/
+├── pdfs/
+│   └── YYYY-MM-description.pdf      # PDF files with stories
+└── images/
+    └── YYYY-MM-description-preview.jpg   # Preview images (square recommended)
+```
+
+### How to Add a New Blog Post
+
+1. **Prepare files:**
+   - PDF: Name as `YYYY-MM-description.pdf` (e.g., `2024-03-crafting-session.pdf`)
+   - Preview image: Same name + `-preview.jpg` (e.g., `2024-03-crafting-session-preview.jpg`)
+   - Place in respective folders
+
+2. **Edit worklog.html:**
+   Copy this template and add before `</div>` of gallery-grid:
+   ```html
+   <div class="gallery-item" onclick="openPDF('worklog/pdfs/YYYY-MM-description.pdf', 'Your Title Here')">
+       <div class="gallery-image">
+           <img src="worklog/images/YYYY-MM-description-preview.jpg" alt="Preview description">
+       </div>
+       <div class="gallery-item-info">
+           <h3>Your Title Here</h3>
+           <p>Brief description of the blog post</p>
+           <span class="item-category">Month Year</span>
+       </div>
+   </div>
+   ```
+
+3. **Replace:**
+   - `YYYY-MM-description` with your actual filename
+   - `Your Title Here` with the blog title (appears in lightbox)
+   - `Brief description` with 1-2 line summary
+   - `Month Year` with the date
+
 ## ⚠️ Important Notes
 
 1. **Always test locally** before uploading changes

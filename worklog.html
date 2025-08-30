@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worklog - Hugs in a Bag</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="images/HiaB-logo.png" alt="Hugs in a Bag Logo">
+                    Hugs in a Bag 💝
+                </a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="portfolio.html" class="nav-link">Our Work</a>
+                <a href="worklog.html" class="nav-link active">Worklog</a>
+                <a href="get-involved.html" class="nav-link">Get Involved</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-right">
+                <a href="#" class="donate-btn">Donate</a>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Our Journey</h1>
+        <p>Behind the scenes stories and donation updates</p>
+    </section>
+
+    <!-- Blog Posts Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <!-- Blog Grid using existing gallery-grid class -->
+            <div class="gallery-grid">
+                <!-- Blog Post 1 -->
+                <div class="gallery-item" onclick="openPDF('worklog/pdfs/2025-08-first-donation.pdf', 'Our First Donation Story')">
+                    <div class="gallery-image">
+                        <img src="worklog/images/2025-08-first-donation-preview.jpg" alt="First donation preview">
+                    </div>
+                    <div class="gallery-item-info">
+                        <h3>Our First Donation</h3>
+                        <p>How we delivered our first comfort kits to local hospitals</p>
+                        <span class="item-category">August 2025</span>
+                    </div>
+                </div>
+
+                <!-- Add more blog posts as needed following the same pattern -->
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox for PDF viewing (reusing existing lightbox structure) -->
+    <div class="lightbox" id="pdfLightbox">
+        <div class="lightbox-content" style="width: 90%; height: 90%; max-width: 1000px;">
+            <span class="lightbox-close" onclick="closePDF()">&times;</span>
+            <h3 id="pdfTitle" style="margin-bottom: 1rem; color: var(--dark-blue);"></h3>
+            <iframe id="pdfViewer" 
+                    src="" 
+                    style="width: 100%; height: calc(100% - 60px); border: none; border-radius: 10px;">
+            </iframe>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Hugs in a Bag - Packed with Love. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">Xiaohongshu</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // PDF Lightbox functionality
+        function openPDF(pdfPath, title) {
+            const lightbox = document.getElementById('pdfLightbox');
+            const pdfViewer = document.getElementById('pdfViewer');
+            const pdfTitle = document.getElementById('pdfTitle');
+            
+            pdfTitle.textContent = title;
+            pdfViewer.src = pdfPath;
+            lightbox.classList.add('active');
+            
+            // Prevent body scroll when lightbox is open
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePDF() {
+            const lightbox = document.getElementById('pdfLightbox');
+            const pdfViewer = document.getElementById('pdfViewer');
+            
+            lightbox.classList.remove('active');
+            pdfViewer.src = ''; // Clear the iframe
+            
+            // Re-enable body scroll
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close lightbox when clicking outside
+        document.getElementById('pdfLightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePDF();
+            }
+        });
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closePDF();
+            }
+        });
+    </script>
+</body>
+</html>

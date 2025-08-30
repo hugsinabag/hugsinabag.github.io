@@ -49,7 +49,7 @@
             <!-- Filter Buttons -->
             <div class="filter-buttons">
                 <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="cards">Handmade Cards</button> <button class="filter-btn" data-filter="knitted">Knitted Items</button>
+                <button class="filter-btn" data-filter="cards">Handmade Cards</button> <button class="filter-btn" data-filter="knitted">Crafts</button>
                 <button class="filter-btn" data-filter="kits">Comfort Kits</button>
             </div>
 
@@ -58,7 +58,7 @@
                 <!-- Handmade Cards -->
                 <div class="gallery-item" data-category="cards">
                     <div class="gallery-image">
-                        <div class="placeholder-img"></div>
+                        <img src="images/comfort-kits/card1.jpg" alt="messages">
                     </div>
                     <div class="gallery-item-info">
                         <h3>Get Well Soon Card</h3>
@@ -69,22 +69,22 @@
 
                 <div class="gallery-item" data-category="cards">
                     <div class="gallery-image">
-                        <div class="placeholder-img"></div>
+                        <img src="images/comfort-kits/card2.jpg" alt="messages">
                     </div>
                     <div class="gallery-item-info">
                         <h3>Multilingual Comfort Notes</h3>
-                        <p>Messages of hope in 12 different languages</p>
+                        <p>Messages of hope in 8 different languages</p>
                         <span class="item-category">Handmade Cards</span>
                     </div>
                 </div>
 
                 <div class="gallery-item" data-category="cards">
                     <div class="gallery-image">
-                        <div class="placeholder-img"></div>
+                        <img src="images/comfort-kits/card3.jpg" alt="messages">
                     </div>
                     <div class="gallery-item-info">
-                        <h3>Children's Art Cards</h3>
-                        <p>Bright and cheerful designs for young patients</p>
+                        <h3>Comfort Card</h3>
+                        <p>A lovely, warm relief for our patients</p>
                         <span class="item-category">Handmade Cards</span>
                     </div>
                 </div>
@@ -92,33 +92,11 @@
                 <!-- Knitted Items -->
                 <div class="gallery-item" data-category="knitted">
                     <div class="gallery-image">
-                        <div class="placeholder-img"></div>
+                        <img src="images/comfort-kits/glove1.jpg" alt="messages">
                     </div>
                     <div class="gallery-item-info">
-                        <h3>Warm Winter Hats</h3>
-                        <p>Soft, handknitted hats in various colors</p>
-                        <span class="item-category">Knitted Items</span>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="knitted">
-                    <div class="gallery-image">
-                        <div class="placeholder-img"></div>
-                    </div>
-                    <div class="gallery-item-info">
-                        <h3>Comfort Mittens</h3>
-                        <p>Cozy mittens to keep patients warm</p>
-                        <span class="item-category">Knitted Items</span>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="knitted">
-                    <div class="gallery-image">
-                        <div class="placeholder-img"></div>
-                    </div>
-                    <div class="gallery-item-info">
-                        <h3>Cozy scarfs</h3>
-                        <p>Soft scarfs for a great winter comfort.</p>
+                        <h3>Warm Gloves</h3>
+                        <p>Soft, handknitted gloves</p>
                         <span class="item-category">Knitted Items</span>
                     </div>
                 </div>
@@ -126,7 +104,7 @@
                 <!-- Comfort Kits -->
                 <div class="gallery-item" data-category="kits">
                     <div class="gallery-image">
-                        <div class="placeholder-img"></div>
+                        <img src="images/comfort-kits/kit1.jpg" alt="messages">
                     </div>
                     <div class="gallery-item-info">
                         <h3>Complete Comfort Kit</h3>
@@ -137,22 +115,11 @@
 
                 <div class="gallery-item" data-category="kits">
                     <div class="gallery-image">
-                        <div class="placeholder-img"></div>
+                        <img src="images/comfort-kits/kit2.jpg" alt="messages">
                     </div>
                     <div class="gallery-item-info">
-                        <h3>Pediatric Joy Box</h3>
-                        <p>Special kits designed for children</p>
-                        <span class="item-category">Comfort Kits</span>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="kits">
-                    <div class="gallery-image">
-                        <div class="placeholder-img"></div>
-                    </div>
-                    <div class="gallery-item-info">
-                        <h3>Holiday Special Kit</h3>
-                        <p>Seasonal comfort kits with festive items</p>
+                        <h3>Complete Comfort Kit</h3>
+                        <p>Full kit with cards, crafts, and warm items</p>
                         <span class="item-category">Comfort Kits</span>
                     </div>
                 </div>
@@ -187,7 +154,7 @@
             <h2>Our Hospital Partners</h2>
             <div class="partners-grid">
                 <div class="partner-logo">
-                    [Hospital Logo]
+                    <img src="images/hospital-logos/LGH-logo.jpg" alt="messages">
                 </div>
                 <div class="partner-logo">
                     [Hospital Logo]
@@ -273,9 +240,19 @@
             item.addEventListener('click', () => {
                 const title = item.querySelector('h3').textContent;
                 const description = item.querySelector('p').textContent;
+                const imgSrc = item.querySelector('.gallery-image img')?.src;
                 
                 lightboxTitle.textContent = title;
                 lightboxDescription.textContent = description;
+                
+                // Update lightbox image
+                const lightboxImageDiv = document.querySelector('.lightbox-image');
+                if (imgSrc) {
+                    lightboxImageDiv.innerHTML = `<img src="${imgSrc}" alt="${title}" style="width: 100%; height: 100%; object-fit: contain;">`;
+                } else {
+                    lightboxImageDiv.innerHTML = '<div class="placeholder-img"></div>';
+                }
+                
                 lightbox.classList.add('active');
             });
         });

@@ -849,6 +849,60 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1rem;
 }
 
+/* Behind the Scenes Photo Gallery */
+.behind-scenes-section {
+    padding: 5rem 0;
+    background-color: var(--off-white);
+}
+
+.behind-scenes-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--dark-blue);
+    margin-bottom: 3rem;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.photo-item {
+    background-color: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.photo-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.photo-caption {
+    padding: 1rem 1.5rem;
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--darker-blue);
+    background-color: var(--white);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Get Involved Page Styles */
 .volunteer-intro {
     padding: 5rem 0;
@@ -1245,61 +1299,6 @@ h1, h2, h3, h4, h5, h6 {
 .faq-answer p {
     color: var(--darker-blue);
     line-height: 1.8;
-}
-
-.newsletter-section {
-    padding: 4rem 0;
-    background-color: var(--secondary-mint);
-    text-align: center;
-}
-
-.newsletter-content {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.newsletter-section h3 {
-    font-size: 2rem;
-    color: var(--dark-blue);
-    margin-bottom: 1rem;
-}
-
-.newsletter-section p {
-    color: var(--darker-blue);
-    margin-bottom: 2rem;
-}
-
-.newsletter-form {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.newsletter-input {
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 25px;
-    font-size: 1rem;
-    width: 300px;
-    max-width: 100%;
-}
-
-.newsletter-button {
-    background-color: var(--primary-coral);
-    color: var(--white);
-    border: none;
-    padding: 0.75rem 2rem;
-    border-radius: 25px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.newsletter-button:hover {
-    background-color: var(--dark-blue);
-    transform: translateY(-2px);
 }
 
 /* Footer */

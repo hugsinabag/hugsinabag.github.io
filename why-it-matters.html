@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why It Matters - Hugs in a Bag</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="images/HiaB-logo.png" alt="Hugs in a Bag Logo">
+                    Hugs in a Bag 💝
+                </a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="portfolio.html" class="nav-link">Our Work</a>
+                <a href="worklog.html" class="nav-link">Worklog</a>
+                <a href="why-it-matters.html" class="nav-link active">Why It Matters</a>
+                <a href="get-involved.html" class="nav-link">Get Involved</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-right">
+                <a href="#" class="donate-btn">Donate</a>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Why It Matters</h1>
+        <p>Understanding the emotional impact of hospitalization</p>
+    </section>
+
+    <!-- Articles Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-grid">
+                <!-- Article 1 -->
+                <div class="gallery-item" onclick="openArticle('article1')">
+                    <div class="gallery-image" style="background-color: var(--secondary-mint); display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 4rem;">😟</span>
+                    </div>
+                    <div class="gallery-item-info">
+                        <h3>Silent Weight of Hospital Anxiety</h3>
+                        <p>The hospital can be an overwhelming place. The unfamiliar environment and uncertainty can lead to deep loneliness...</p>
+                        <span class="item-category">Continue Reading →</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Content (Hidden, shown in lightbox) -->
+    <div id="article1" style="display: none;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="color: var(--dark-blue); margin-bottom: 2rem;">Silent Weight of Hospital Anxiety: No One Should Face It Alone</h2>
+            
+            <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 2rem; color: var(--darker-blue);">
+                The hospital can be an overwhelming place. The unfamiliar environment, the uncertainty of an illness, and being isolated from family can lead to feelings of fear, anxiety, and deep loneliness.
+            </p>
+
+            <!-- Statistics Box -->
+            <div class="stat-card" style="max-width: 500px; margin: 2rem auto; background-color: var(--off-white);">
+                <div class="stat-icon">📊</div>
+                <h3 style="color: var(--primary-coral);">28%</h3>
+                <p>of patients experience anxiety symptoms of clinically significant severity</p>
+                <span style="font-size: 0.9rem; opacity: 0.8;">- National Institute of Health</span>
+            </div>
+
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+                Studies show that higher levels of psychological stress experienced by hospital inpatients are associated with poorer patient outcomes, including increased pain and prolonged recovery time.
+            </p>
+
+            <!-- Pull Quote -->
+            <div style="border-left: 4px solid var(--primary-coral); padding-left: 2rem; margin: 2rem 0; background-color: var(--off-white); padding: 2rem;">
+                <p style="font-size: 1.3rem; font-style: italic; color: var(--dark-blue); margin: 0;">
+                    This isn't a side effect! It's a critical part of the patient experience that demands our attention and compassion.
+                </p>
+            </div>
+
+            <!-- Our Goal Section -->
+            <div style="text-align: center; background: linear-gradient(135deg, var(--primary-yellow) 0%, var(--primary-coral) 100%); padding: 3rem; border-radius: 20px; margin-top: 3rem;">
+                <h3 style="color: var(--white); font-size: 1.8rem; margin-bottom: 1rem;">Our Goal</h3>
+                <p style="color: var(--white); font-size: 1.5rem; font-weight: 600;">
+                    Heal the Heart,<br>So the Body Can Follow.
+                </p>
+            </div>
+
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-top: 2rem;">
+                We believe that emotional distress can hinder physical healing. Each comfort kit we deliver is a gentle reminder that someone, somewhere, cares deeply about their journey.
+            </p>
+        </div>
+    </div>
+
+    <!-- Lightbox for Articles -->
+    <div class="lightbox" id="articleLightbox">
+        <div class="lightbox-content" style="width: 90%; max-width: 900px; height: auto; max-height: 90vh; overflow-y: auto;">
+            <span class="lightbox-close" onclick="closeArticle()">&times;</span>
+            <div id="articleContent" style="padding: 2rem;">
+                <!-- Article content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Hugs in a Bag - Packed with Love. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">Xiaohongshu</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Article Lightbox functionality
+        function openArticle(articleId) {
+            const lightbox = document.getElementById('articleLightbox');
+            const articleContent = document.getElementById('articleContent');
+            const article = document.getElementById(articleId);
+            
+            // Copy article content to lightbox
+            articleContent.innerHTML = article.innerHTML;
+            lightbox.classList.add('active');
+            
+            // Prevent body scroll when lightbox is open
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeArticle() {
+            const lightbox = document.getElementById('articleLightbox');
+            lightbox.classList.remove('active');
+            
+            // Re-enable body scroll
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close lightbox when clicking outside
+        document.getElementById('articleLightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeArticle();
+            }
+        });
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeArticle();
+            }
+        });
+    </script>
+</body>
+</html>

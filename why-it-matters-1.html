@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why It Matters - Hugs in a Bag</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="images/HiaB-logo.png" alt="Hugs in a Bag Logo">
+                    Hugs in a Bag 💝
+                </a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="portfolio.html" class="nav-link">Our Work</a>
+                <a href="impact.html" class="nav-link">Impact</a>
+                <a href="why-it-matters.html" class="nav-link active">Why It Matters</a>
+                <a href="get-involved.html" class="nav-link">Get Involved</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-right">
+                <a href="#" class="donate-btn">Donate</a>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Why It Matters</h1>
+        <p>Understanding the emotional impact of hospitalization</p>
+    </section>
+
+    <!-- Articles Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-grid">
+                <!-- Article 1 -->
+                <a href="articles/hospital-anxiety.html" class="gallery-item" style="text-decoration: none; color: inherit;">
+                    <div class="gallery-image" style="background-color: var(--secondary-mint); display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 4rem;">😟</span>
+                    </div>
+                    <div class="gallery-item-info">
+                        <h3>Silent Weight of Hospital Anxiety</h3>
+                        <p>The hospital can be an overwhelming place. The unfamiliar environment and uncertainty can lead to deep loneliness...</p>
+                        <span class="item-category">Continue Reading →</span>
+                    </div>
+                </div>
+                <!-- Article 2 -->
+                <a href="articles/caregiver-support.html" class="gallery-item" style="text-decoration: none; color: inherit;">
+                    <div class="gallery-image" style="background-color: var(--secondary-beige); display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 4rem;">🤗</span>
+                    </div>
+                    <div class="gallery-item-info">
+                        <h3>Why Caregivers Need Love Too</h3>
+                        <p>We talk a lot about supporting patients, but what about the people holding everything together behind the scenes?</p>
+                        <span class="item-category">Continue Reading →</span>
+                    </div>
+                </div>
+                <!-- Article 3 -->
+                <div class="gallery-item" onclick="openArticle('article3')">
+                    <div class="gallery-image" style="background-color: var(--secondary-mint); display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 4rem;">🏥</span>
+                    </div>
+                    <div class="gallery-item-info">
+                        <h3>Does the Hospital Actually Make Illnesses Worse?</h3>
+                        <p>Have you ever felt your symptoms worsen in a hospital? The sharp smell of disinfectant, the sound of machines...</p>
+                        <span class="item-category">Continue Reading →</span>
+                    </div>
+                </div>
+                <!-- Article 4 -->
+                <div class="gallery-item" onclick="openArticle('article4')">
+                    <div class="gallery-image">
+                        <img src="images/articles/art-therapy-cover.jpg" alt="Art therapy cover">
+                    </div>
+                    <div class="gallery-item-info">
+                        <h3>How Art, Music & Creative Activities Help Patients Heal</h3>
+                        <p>Mental health of patients has always been a crucial topic in the healing journey. Discover how creative activities can help...</p>
+                        <span class="item-category">Continue Reading →</span>
+                    </div>
+                </div>
+                <!-- Article 5 -->
+                <div class="gallery-item" onclick="openArticle('article5')">
+                    <div class="gallery-image" style="background-color: var(--primary-yellow); display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 4rem;">🎗️</span>
+                    </div>
+                    <div class="gallery-item-info">
+                        <h3>Childhood Cancer Awareness</h3>
+                        <p>Childhood Cancer Awareness Month is observed annually in September to increase exposure to the community about challenges...</p>
+                        <span class="item-category">Continue Reading →</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Content 2 (Hidden, shown in lightbox) -->
+    <div id="article2" style="display: none;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="color: var(--dark-blue); margin-bottom: 2rem;">Why Caregivers Need Love Too — It's More Than You Think!</h2>
+            
+            <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 2rem; color: var(--darker-blue);">
+                We talk a lot about supporting patients, but what about the people holding everything together behind the scenes? Caregivers and family members often pour every bit of their energy into helping their loved ones—while their own well-being quietly takes a backseat.
+            </p>
+
+            <div style="text-align: center; margin: 2rem 0;">
+                <p style="font-size: 1.3rem; font-weight: 600; color: var(--primary-coral);">
+                    It's time we shine a light on them.
+                </p>
+            </div>
+
+            <h3 style="color: var(--dark-blue); margin-top: 3rem; margin-bottom: 1.5rem;">Here's the reality:</h3>
+
+            <!-- Statistics Box 1 -->
+            <div class="stat-card" style="max-width: 500px; margin: 2rem auto; background-color: var(--off-white);">
+                <div class="stat-icon">😰</div>
+                <h3 style="color: var(--primary-coral);">88%</h3>
+                <p>of caregivers experience significant stress</p>
+                <span style="font-size: 0.9rem; opacity: 0.8;">Nearly half feel emotionally exhausted</span>
+                <span style="font-size: 0.85rem; opacity: 0.7; display: block; margin-top: 0.5rem;">- Cleveland Clinic</span>
+            </div>
+
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+                And it doesn't stop there. According to the CDC, long-term caregivers face higher risks of chronic illnesses like heart disease and depression. They're giving so much that their own health is often compromised.
+            </p>
+
+            <!-- Financial Impact Box -->
+            <div style="background-color: var(--secondary-mint); padding: 2rem; border-radius: 20px; margin: 2rem 0;">
+                <p style="font-size: 1.1rem; color: var(--dark-blue); margin: 0;">
+                    <strong>Let's not forget the financial strain.</strong> The Alzheimer's Association shared that dementia caregivers spend around <span style="font-size: 1.3rem; font-weight: 700; color: var(--primary-coral);">$7,000 to $12,000</span> of their own money each year. 
+                </p>
+                <p style="font-style: italic; margin-top: 1rem; color: var(--darker-blue);">
+                    That's like buying a used car—every year!
+                </p>
+            </div>
+
+            <!-- Hope Section -->
+            <div style="border-left: 4px solid var(--primary-yellow); padding-left: 2rem; margin: 3rem 0; background-color: var(--off-white); padding: 2rem;">
+                <p style="font-size: 1.2rem; color: var(--dark-blue); margin: 0;">
+                    <strong>But there's hope.</strong> When caregivers receive support—whether through respite care, emotional check-ins, or financial help—they become stronger, healthier, and better equipped to care. A little help goes a long way.
+                </p>
+            </div>
+
+            <!-- Call to Action -->
+            <div style="text-align: center; background: linear-gradient(135deg, var(--primary-yellow) 0%, var(--primary-coral) 100%); padding: 3rem; border-radius: 20px; margin-top: 3rem;">
+                <h3 style="color: var(--white); font-size: 1.6rem; margin-bottom: 1rem;">So let's do this:</h3>
+                <p style="color: var(--white); font-size: 1.2rem; line-height: 1.8;">
+                    Reach out to a caregiver today. Offer a hug, a meal, or just your time.<br>
+                    <strong>Because supporting those who support others isn't just kind—it's necessary.</strong>
+                </p>
+            </div>
+
+            <p style="text-align: right; margin-top: 3rem; font-style: italic; color: var(--darker-blue);">
+                By Victoria Cao (Sihan Cao)
+            </p>
+        </div>
+        <!-- Citations -->
+        <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--secondary-beige);">
+            <p style="font-size: 0.9rem; color: var(--darker-blue); margin-bottom: 1rem; font-weight: 600;">
+                References:
+            </p>
+            <ul style="list-style: none; padding: 0; font-size: 0.85rem; line-height: 1.8;">
+                <li style="margin-bottom: 0.5rem; color: var(--darker-blue);">
+                    • Cleveland Clinic: 
+                    <a href="https://my.clevelandclinic.org/" target="_blank" style="color: var(--primary-coral); text-decoration: none;">
+                        my.clevelandclinic.org
+                    </a>
+                </li>
+                <li style="margin-bottom: 0.5rem; color: var(--darker-blue);">
+                    • CDC: 
+                    <a href="https://www.cdc.gov/aging/caregiving/index.htm" target="_blank" style="color: var(--primary-coral); text-decoration: none;">
+                        cdc.gov/aging/caregiving
+                    </a>
+                </li>
+                <li style="color: var(--darker-blue);">
+                    • Alzheimer's Association: 
+                    <a href="https://www.alz.org/" target="_blank" style="color: var(--primary-coral); text-decoration: none;">
+                        alz.org
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Article Content 3 (Hidden, shown in lightbox) -->
+    <div id="article3" style="display: none;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="color: var(--dark-blue); margin-bottom: 2rem;">Does the Hospital Actually Make Illnesses Worse?</h2>
+            
+            <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 2rem; color: var(--darker-blue);">
+                Have you ever had this kind of feeling when you walked into a hospital? The sharp smell of disinfectant, the sound of machines, the sight of doctors, and the movement of other patients make your heart beat faster and leave you feeling tense. Many people even say that their symptoms are getting worse in the hospital—their headaches worsen, their body feels more uncomfortable, and their sleep becomes worse.
+            </p>
+
+            <div style="text-align: center; margin: 2rem 0;">
+                <p style="font-size: 1.3rem; font-weight: 600; color: var(--primary-coral);">
+                    So, is the hospital itself causing these problems?
+                </p>
+            </div>
+
+            <!-- Answer Box -->
+            <div style="background-color: var(--off-white); padding: 2rem; border-radius: 20px; margin: 2rem 0;">
+                <p style="font-size: 1.2rem; color: var(--dark-blue); margin: 0;">
+                    <strong>Not exactly.</strong> What really matters is the stress and anxiety that hospitals often trigger.
+                </p>
+            </div>
+
+            <!-- Statistics Box -->
+            <div class="stat-card" style="max-width: 500px; margin: 2rem auto; background-color: var(--secondary-beige);">
+                <div class="stat-icon">📊</div>
+                <h3 style="color: var(--primary-coral);">40% Faster</h3>
+                <p>Recovery rate for patients with lower psychological stress after surgery</p>
+                <span style="font-size: 0.9rem; opacity: 0.8;">compared to high-stress patients</span>
+            </div>
+
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+                Stress can lead to raised blood pressure, making heart conditions more dangerous. It can also fuel anxiety and depression, causing an even greater increase in how strongly we feel pain.
+            </p>
+            
+            <div style="text-align: center; margin: 2rem 0;">
+                <img src="images/articles/Stress-stats.png" 
+                    alt="Stress and recovery statistics graph" 
+                    style="max-width: 100%; height: auto; max-height: 400px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);">
+            </div>
+
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+                Beyond the research, real-life experiences confirm this too. Many patients say that once they leave stressful environments like hospitals and return home—surrounded by family and a familiar environment—their recovery speeds up. Sometimes, symptoms that are "hard to cure" will also be recovered because their stress levels decrease.
+            </p>
+            
+            <!-- Case Study Box -->
+            <div style="border-left: 4px solid var(--primary-yellow); padding-left: 2rem; margin: 2rem 0; background-color: var(--off-white); padding: 2rem;">
+                <h4 style="color: var(--dark-blue); margin-bottom: 1rem;">Real Case Study:</h4>
+                <p style="font-size: 1.1rem; color: var(--darker-blue); margin: 0;">
+                    A patient with stomach ulcers was healing very slowly in the hospital due to constant tension and worry. After moving to a quiet countryside home where he could relax and spend time gardening, his ulcers gradually improved <em>without any additional medication</em>.
+                </p>
+                <p style="font-size: 0.9rem; color: var(--darker-blue); margin-top: 1rem; font-style: italic;">
+                    - Journal of Psychosomatic Research
+                </p>
+            </div>
+
+            <!-- Key Insight -->
+            <div style="text-align: center; background: linear-gradient(135deg, var(--primary-yellow) 0%, var(--primary-coral) 100%); padding: 3rem; border-radius: 20px; margin: 3rem 0;">
+                <h3 style="color: var(--white); font-size: 1.6rem; margin-bottom: 1rem;">What does this tell us?</h3>
+                <p style="color: var(--white); font-size: 1.2rem; line-height: 1.8;">
+                    Recovery does not only depend on doctors and medicine, it's also about the state of your mind.<br>
+                    When you feel calm, safe, and cared for, your body has more strength to fight the disease.
+                </p>
+            </div>
+
+            <!-- Closing Message -->
+            <div style="background-color: var(--secondary-mint); padding: 2rem; border-radius: 20px; margin: 2rem 0;">
+                <p style="font-size: 1.1rem; color: var(--dark-blue); margin-bottom: 1rem;">
+                    So give yourself some small moments to relax each day:
+                </p>
+                <ul style="list-style: none; padding-left: 1rem; color: var(--darker-blue);">
+                    <li style="margin-bottom: 0.5rem;">✓ Slowly take a deep breath</li>
+                    <li style="margin-bottom: 0.5rem;">✓ Enjoy music</li>
+                    <li style="margin-bottom: 0.5rem;">✓ Spend quiet time with someone you love</li>
+                </ul>
+                <p style="font-size: 1.1rem; color: var(--dark-blue); margin-top: 1rem; font-weight: 600;">
+                    Sometimes, the best medicine is not a real medicine, but a peaceful heart. We are always here to support you.
+                </p>
+            </div>
+
+            <p style="text-align: right; margin-top: 3rem; font-style: italic; color: var(--darker-blue);">
+                By Ria Li
+            </p>
+
+            <!-- Citations -->
+            <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--secondary-beige);">
+                <p style="font-size: 0.9rem; color: var(--darker-blue); margin-bottom: 1rem; font-weight: 600;">
+                    References:
+                </p>
+                <ol style="font-size: 0.85rem; line-height: 1.8; color: var(--darker-blue); padding-left: 1.5rem;">
+                    <li style="margin-bottom: 0.5rem;">
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/19686881/" target="_blank" style="color: var(--primary-coral); text-decoration: none;">
+                            pubmed.ncbi.nlm.nih.gov/19686881
+                        </a>
+                    </li>
+                    <li style="margin-bottom: 0.5rem;">
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/38413330/" target="_blank" style="color: var(--primary-coral); text-decoration: none;">
+                            pubmed.ncbi.nlm.nih.gov/38413330
+                        </a>
+                    </li>
+                    <li style="margin-bottom: 0.5rem;">
+                        <a href="https://www.gastro.theclinics.com/article/S0889-8553(03)00030-X/abstract" target="_blank" style="color: var(--primary-coral); text-decoration: none;">
+                            gastro.theclinics.com/article/S0889-8553(03)00030-X
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/1109497/" target="_blank" style="color: var(--primary-coral); text-decoration: none;">
+                            pubmed.ncbi.nlm.nih.gov/1109497
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Article Content 4 (Hidden, shown in lightbox) -->
+    <div id="article4" style="display: none;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="color: var(--dark-blue); margin-bottom: 2rem;">How Art, Music or Small Creative Activities Can Help Patients Heal Emotionally</h2>
+            
+            <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 2rem; color: var(--darker-blue);">
+                Mental health of patients has always been a crucial topic in the healing journey of a patient. There's presence of many patients that are unable to heal emotionally via traditional therapy. Some people might assume it is due to lack of experience or incompatibility between patients and psychiatrist. However, art, music or small creative activities plays a vital role in helping patients heal emotionally.
+            </p>
+
+            <div style="background-color: var(--off-white); padding: 2rem; border-radius: 20px; margin: 2rem 0;">
+                <p style="font-size: 1.1rem; color: var(--dark-blue); margin: 0; text-align: center;">
+                    Art is in every pieces of our life puzzle and everyone perceives art in a different and unique manner. Undeniably, art has increased the quality of life of a patient who is struggling in their healing journey.
+                </p>
+            </div>
+
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+                The purpose of this article is to explore how art, music, or small creative activities can help patient heal emotionally.
+            </p>
+
+            <!-- How Art Therapy Works Section -->
+            <h3 style="color: var(--dark-blue); margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.5rem;">How does art therapy work?</h3>
+            
+            <div style="text-align: center; margin: 2rem 0;">
+                <img src="images/articles/art-therapy-1.jpg" 
+                    alt="Art therapy session" 
+                    style="max-width: 100%; height: auto; max-height: 400px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);">
+            </div>
+
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+                In a session, there will a presence of a trained art therapist who will guide patients through the process of finding inner peace, this allows the patient to move on their own path and create something which expresses themselves. This allows art to act as a tool for self-expression, stress relief and healing. Patients are able to explore their undercovered emotions, manage stress and anxiety, yet even build confidence. For some, the act of creating a work of art is soothing, while for others, they are able to convey their underlying messages via a new form of understanding.
+            </p>
+
+            <!-- Benefits Section -->
+            <div style="background: var(--secondary-mint); padding: 3rem; border-radius: 20px; margin: 3rem 0;">
+                <h3 style="color: var(--dark-blue); margin-bottom: 1.5rem;">Benefits of engaging in art therapy as a patient</h3>
+                
+                <div style="background-color: rgba(255, 255, 255, 0.8); padding: 1.5rem; border-radius: 15px; margin-bottom: 1.5rem;">
+                    <p style="color: var(--darker-blue); margin: 0;">
+                        <strong>Community Connection:</strong> Patients are able to work alone or work with people with common interests while creating art pieces. This allow them to communicate with different types of people and progressively shares their emotions via various form. For example, art, music or words. Other than that, a strong feeling of belonging will be fostered in the community.
+                    </p>
+                </div>
+                
+                <div style="background-color: rgba(255, 255, 255, 0.8); padding: 1.5rem; border-radius: 15px;">
+                    <p style="color: var(--darker-blue); margin: 0;">
+                        <strong>Enhanced Creativity:</strong> Patients are also able to improve in creative thinking and problem solving skills. Patient will learn how to view things from different perspective and even get inspired from little details during their process of art therapy. This improves their flexibility in solving issues.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Conditions Section -->
+            <div style="border-left: 4px solid var(--primary-coral); padding-left: 2rem; margin: 2rem 0;">
+                <h4 style="color: var(--dark-blue); margin-bottom: 1rem;">Specific mental health conditions where art therapy has proven effective include:</h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 1rem; color: var(--darker-blue);">
+                        <strong style="color: var(--primary-coral);">PTSD:</strong> Art therapy allows individuals to process trauma non-verbally, which can be invaluable for those who struggle to articulate their experiences.
+                    </li>
+                    <li style="margin-bottom: 1rem; color: var(--darker-blue);">
+                        <strong style="color: var(--primary-coral);">Schizophrenia:</strong> Engaging in art can help individuals manage symptoms, improving cognitive function and emotional regulation.
+                    </li>
+                    <li style="color: var(--darker-blue);">
+                        <strong style="color: var(--primary-coral);">Depressive Disorders:</strong> Creative expression has been shown to alleviate feelings of sadness and hopelessness.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Call to Action Section -->
+            <h3 style="color: var(--dark-blue); margin-top: 3rem; margin-bottom: 1.5rem; text-align: center;">If you're considering art therapy</h3>
+            
+            <div style="text-align: center; margin: 2rem 0;">
+                <img src="images/articles/art-therapy-2.png" 
+                    alt="Art therapy materials" 
+                    style="max-width: 100%; height: auto; max-height: 400px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);">
+            </div>
+
+            <div style="text-align: center; background-color: var(--primary-yellow); padding: 2.5rem; border-radius: 20px; margin: 2rem 0;">
+                <p style="font-size: 1.3rem; color: var(--dark-blue); margin: 0; font-weight: 600;">
+                    Just go ahead! Everyone perceives art in a different way and that's why art has no limitations or discriminations. Use art to tell everyone how you feel, use art to seek help, use art to become a better version of yourself.
+                </p>
+            </div>
+
+            <p style="text-align: right; margin-top: 3rem; font-style: italic; color: var(--darker-blue);">
+                By Tze Kee Chua (Kloe)
+            </p>
+
+            <!-- Citations -->
+            <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--secondary-beige);">
+                <p style="font-size: 0.9rem; color: var(--darker-blue); margin-bottom: 1rem; font-weight: 600;">
+                    References:
+                </p>
+                <ul style="list-style: none; padding: 0; font-size: 0.85rem; line-height: 1.8;">
+                    <li style="margin-bottom: 0.5rem; color: var(--darker-blue);">
+                        • <a href="https://www.verywellmind.com/expressive-arts-therapy-definition-types-techniques-and-efficacy-5197564" target="_blank" style="color: var(--primary-coral); text-decoration: none;">
+                            verywellmind.com - Expressive Arts Therapy
+                        </a>
+                    </li>
+                    <li style="color: var(--darker-blue);">
+                        • <a href="https://www.srhs.org/art-therapy-mental-health-recovery" target="_blank" style="color: var(--primary-coral); text-decoration: none;">
+                            srhs.org - Art Therapy Mental Health Recovery
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Article Content 5 (Hidden, shown in lightbox) -->
+        <div id="article5" style="display: none;">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h2 style="color: var(--dark-blue); margin-bottom: 2rem;">Childhood Cancer Awareness</h2>
+                
+                <h3 style="color: var(--dark-blue); margin-bottom: 1.5rem;">Introduction & Awareness</h3>
+                
+                <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 2rem; color: var(--darker-blue);">
+                    Childhood Cancer Awareness Month is observed annually in September to increase exposure to the community about challenges faced by children with cancer, bring awareness for research into cures and treatments, and support affected families.
+                </p>
+
+                <!-- Statistics Box -->
+                <div class="stat-card" style="max-width: 500px; margin: 2rem auto; background-color: var(--off-white);">
+                    <div class="stat-icon">🌍</div>
+                    <h3 style="color: var(--primary-coral);">400,000</h3>
+                    <p>children aged 0-19 diagnosed with cancer annually</p>
+                    <span style="font-size: 0.9rem; opacity: 0.8;">- World Health Organisation (WHO)</span>
+                </div>
+
+                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+                    The idea of raising awareness on Childhood Cancer started in 1990 when former American President George Bush introduced the concept, but it wasn't officially recognized until 26th September 2019. Afterwards, organizations around the globe have come together each September to raise awareness by displaying gold ribbons and hosting events that shine a light on childhood cancer. Childhood Cancer Awareness Month is established through the combined efforts of various organizations and governmental bodies worldwide, along with significant momentum provided by former US President Barack Obama since 2012.
+                </p>
+
+                <!-- Gold Ribbon Section -->
+                <div class="stat-card" style="background-color: var(--primary-yellow); text-align: center;">
+                    <div class="stat-icon">🎗️</div>
+                    <p style="font-size: 1.1rem; color: var(--dark-blue); margin: 0;">
+                        The golden ribbon represents that children are truly a treasure for our community, delivering us a reminder that we must do our best to protect them. This golden ribbon represents all types of childhood cancers to raise awareness about this issue in our community.
+                    </p>
+                </div>
+
+                <p style="font-size: 1.1rem; line-height: 1.8; margin: 2rem 0;">
+                    Research published on the National Institutes of Health's website has shown that cancer will not just affect and disrupt the children's mental and emotional health, it will also worsen the relationship and mental health of their family members. An assessment that involved 174 patients and 149 siblings was performed, while the Actor Partner Interdependence Model (APIM) was used to estimate their relationship and mental status. It was proven that families that have children with cancer have a lower score compared to normal families, although they are still very supportive of the patient.
+                </p>
+
+                <h3 style="color: var(--dark-blue); margin-top: 3rem; margin-bottom: 1.5rem;">Understanding Childhood Cancer</h3>
+
+                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+                    According to a study published on MedlinePlus, childhood cancer often occurs due to genetic inheritance and genetic changes during their growth, but most of the time the cause of their cancer is not known. However, not all children with the variant gene will get cancer. Children born with Down syndrome are also more likely to develop leukaemia. This makes a difference between childhood and adult cancer, as they don't develop because of unhealthy lifestyle choices or habits, like an imbalanced diet and smoking. But the good news is that childhood cancers hold a high chance of recovery if they are diagnosed early and treated with proper medication.
+                </p>
+
+                <!-- Treatment Info Box -->
+                <div class="teams-grid" style="gap: 1.5rem; margin: 2rem 0;">
+                    <div class="team-card">
+                        <h3 style="font-size: 1.2rem;">Common Affected Areas</h3>
+                        <p>When childhood cancers appear, they often affect blood cells, the lymph system, the brain, the adrenal gland, and the bones.</p>
+                    </div>
+                    
+                    <div class="team-card">
+                        <h3 style="font-size: 1.2rem;">Treatment Options</h3>
+                        <p>Treated similarly to adult cancer, including chemotherapy, radiation therapy, immunotherapy, surgery, and stem cell transplant.</p>
+                    </div>
+                </div>
+
+                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+                    But for children, the frequency of therapy, type of medicine, and need for surgery might differ from adults, as cancer cells in children usually respond better to treatments compared to adult cancers. Studies show that children tend to handle a higher dosage of chemotherapy in short periods before side effects occur.
+                </p>
+
+                <!-- Side Effects Warning -->
+                <div class="story-card" style="margin: 2rem 0;">
+                    <p style="margin-bottom: 1rem;"><strong>However, side effects might still happen while undergoing cancer treatment. These involve:</strong></p>
+                    <ul style="list-style: none; padding: 0; columns: 2; gap: 2rem;">
+                        <li style="margin-bottom: 0.5rem; color: var(--darker-blue);">• Infection</li>
+                        <li style="margin-bottom: 0.5rem; color: var(--darker-blue);">• Poor appetite</li>
+                        <li style="margin-bottom: 0.5rem; color: var(--darker-blue);">• Hair loss</li>
+                        <li style="margin-bottom: 0.5rem; color: var(--darker-blue);">• Constipation</li>
+                        <li style="margin-bottom: 0.5rem; color: var(--darker-blue);">• Diarrhoea</li>
+                        <li style="margin-bottom: 0.5rem; color: var(--darker-blue);">• Infertility</li>
+                        <li style="margin-bottom: 0.5rem; color: var(--darker-blue);">• Mouth sores</li>
+                        <li style="margin-bottom: 0.5rem; color: var(--darker-blue);">• Hearing damage</li>
+                    </ul>
+                    <p style="margin-top: 1rem;">Cancer treatments may also delay their body growth and even form another cancer as time progresses. These side effects are often noticed after weeks or years of treatment; this situation is widely recognised as 'late effects.'</p>
+                </div>
+
+                <p style="text-align: right; margin-top: 3rem; font-style: italic; color: var(--darker-blue);">
+                    By Kim Hung Low
+                </p>
+            </div>
+        </div>
+    </div>
+    <!--End of Article content-->
+
+
+    <!-- Lightbox for Articles -->
+    <div class="lightbox" id="articleLightbox">
+        <div class="lightbox-content" style="width: 90%; max-width: 900px; height: auto; max-height: 90vh; overflow-y: auto;">
+            <span class="lightbox-close" onclick="closeArticle()">&times;</span>
+            <div id="articleContent" style="padding: 2rem;">
+                <!-- Article content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Hugs in a Bag - Packed with Love. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">Xiaohongshu</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Article Lightbox functionality
+        function openArticle(articleId) {
+            const lightbox = document.getElementById('articleLightbox');
+            const articleContent = document.getElementById('articleContent');
+            const article = document.getElementById(articleId);
+            
+            // Copy article content to lightbox
+            articleContent.innerHTML = article.innerHTML;
+            lightbox.classList.add('active');
+            
+            // Prevent body scroll when lightbox is open
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeArticle() {
+            const lightbox = document.getElementById('articleLightbox');
+            lightbox.classList.remove('active');
+            
+            // Re-enable body scroll
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close lightbox when clicking outside
+        document.getElementById('articleLightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeArticle();
+            }
+        });
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeArticle();
+            }
+        });
+    </script>
+</body>
+</html>

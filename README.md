@@ -2,197 +2,186 @@
 
 ## 🚀 Quick Start for New Team Members
 
-Welcome to the Hugs in a Bag website development team! This guide will help you understand our website structure and how to make updates.
+Welcome! This guide will help you understand and maintain the Hugs in a Bag website.
 
 ## 📁 File Structure
 
 ```
 HugsInABag-website/
-├── index.html              # Home page
-├── about.html              # About Us & Team Members page
-├── portfolio.html          # Our Work/Gallery page
-├── get-involved.html       # Volunteer opportunities page
-├── contact.html            # Contact information page
+├── index.html                    # Home page
+├── about.html                    # About Us & Team Members
+├── portfolio.html                # Our Work (products + behind-scenes)
+├── worklog.html                  # Impact/Community (donations + testimonials)
+├── why-it-matters.html           # Research articles listing
+├── get-involved.html             # Volunteer opportunities
+├── contact.html                  # Contact information
+├── styles.css                    # ALL styles (shared across pages)
+│
+├── articles/                     # Individual article pages
+│   ├── hospital-anxiety.html
+│   ├── caregiver-support.html
+│   ├── hospital-illness.html
+│   ├── art-therapy.html
+│   ├── childhood-cancer.html
+│   └── cancer-survivor-journey.html
+│
 ├── images/
-│   └── HugsInABag-member-photos/   # Team member photos (firstname-lastname.jpg)
-└── tools/
-    ├── MemberCardGenerator.java     # Auto-generates team member cards
-    └── HiaB-Team-Info - Sheet1.csv # Downloaded from Google Sheets
+│   ├── HiaB-logo.png            # Navigation logo
+│   ├── hero.png                 # Homepage hero background
+│   ├── HugsInABag-member-photos/
+│   │   └── firstname-lastname.jpg  # Team photos (lowercase)
+│   ├── comfort-kits/            # Product photos
+│   ├── behind-scenes/           # Behind-the-scenes photos
+│   └── articles/                # Article images
+│       ├── art-therapy-cover.jpg
+│       ├── art-therapy-1.jpg
+│       └── Stress-stats.png
+│
+└── tools/                       # Team member update tools
+    ├── MemberCardGenerator.java
+    ├── HiaB-Team-Info - Sheet1.csv
+    └── run-member-generator.bat
 ```
 
-## 🛠️ How to Update Content
+## 🎨 Design System
 
-### 1. Updating Team Members (Automated Method)
+### Colors (defined in styles.css :root)
+- **Primary Pink**: `#ffafcc` (signature color)
+- **Hot Pink**: `#ff90b3` (hover states)
+- **Sky Blue**: `#bde0fe` (accents)
+- **Light Pink**: `#ffc8dd` (backgrounds)
+- **Text**: `#2d3436` (dark gray for readability)
 
-**Step 1:** Download the latest CSV from Google Sheets
-- Go to: https://docs.google.com/spreadsheets/d/1NkuFuSVa_5iLQlFsg63C-WsyWvCe_EMYNSIt49TKx3M/edit
-- File → Download → Comma Separated Values (.csv)
-- Save as `HiaB-Team-Info - Sheet1.csv` in the `tools/` folder
+### Common CSS Classes
+- `.stat-card` - Statistics boxes
+- `.team-card` - Info cards with hover effect
+- `.story-card` - Quote/testimonial boxes
+- `.gallery-item` - Portfolio/article preview cards
+- `.cta-button` - Call-to-action buttons
 
-**Step 2:** Add member photos
-- Name photos as `firstname-lastname.jpg` (all lowercase, no spaces)
+## 👥 Updating Team Members (Automated)
+
+### Step 1: Update Google Sheets
+- Go to the [team spreadsheet](https://docs.google.com/spreadsheets/d/1NkuFuSVa_5iLQlFsg63C-WsyWvCe_EMYNSIt49TKx3M/edit)
+- Add/edit member information
+- Download as CSV (keep filename: `HiaB-Team-Info - Sheet1.csv`)
+
+### Step 2: Add Photos
+- Name photos as `firstname-lastname.jpg` (all lowercase)
 - Example: "Jane Doe" → `jane-doe.jpg`
-- Example: "Zhouyuan Wu(Emily)" → `zhouyuan-wu.jpg` (parentheses content removed)
-- Place in `images/HugsInABag-member-photos/` folder
-- Recommended: Square images, 400x400px, under 200KB
+- Place in `images/HugsInABag-member-photos/`
 
-**Step 3:** Run the Java tool
-```bash
-cd tools
-javac MemberCardGenerator.java
-java MemberCardGenerator
-```
+### Step 3: Run Update Tool
+- Double-click `run-member-generator.bat` in tools folder
+- Check console for any missing photos
+- Refresh about.html to see changes
 
-**Step 4:** Check the console output
-- ✓ = Photo found and linked
-- ✗ = No photo found (will show 👤 emoji)
+## 📝 Adding New Articles
 
-### 2. Manual Content Updates
+### Step 1: Create Article HTML
+1. Copy any existing article from `articles/` folder as template
+2. Update:
+   - Title in `<title>` and `<h1>` tags
+   - Article content in the main section
+   - Author name at bottom
 
-#### Adding/Editing Static Content
-Each HTML file has embedded CSS for easy editing. To update:
-- Text content: Find the relevant `<section>` and edit the text
-- Statistics: Look for `[150+]` placeholders in index.html
-- Links: Update href attributes as needed
-
-#### Important HTML Markers (DO NOT REMOVE)
-In `about.html`, these markers are used by the Java tool:
+### Step 2: Add Preview Card
+In `why-it-matters.html`, add before closing `</div>` of gallery-grid:
 ```html
-<!-- Team Members -->
-<!-- Team members end -->
+<a href="articles/your-article.html" class="gallery-item" style="text-decoration: none; color: inherit;">
+    <div class="gallery-image" style="background-color: var(--secondary-mint); display: flex; align-items: center; justify-content: center;">
+        <span style="font-size: 4rem;">📄</span>
+    </div>
+    <div class="gallery-item-info">
+        <h3>Article Title</h3>
+        <p>Brief description...</p>
+        <span class="item-category">Continue Reading →</span>
+    </div>
+</a>
 ```
 
-### 3. Adding New Pages
+## 🖼️ Adding Portfolio/Behind-Scenes Photos
 
-1. Copy an existing HTML file as a template
-2. Update the `<title>` tag
-3. Change the active navigation link:
-   ```html
-   <a href="newpage.html" class="nav-link active">New Page</a>
-   ```
-4. Add the new page link to ALL other HTML files' navigation
-
-## 🎨 Styling Guide
-
-### Color Palette
-```css
---primary-yellow: #F4D06F;
---primary-coral: #D5896F;
---secondary-mint: #9DD9D2;
---secondary-beige: #DAB785;
---dark-blue: #04395E;
---darker-blue: #031D44;
---white: #FFFFFF;
---off-white: #FFF9F0;
-```
-
-### CSS Location
-All CSS is embedded in each HTML file's `<style>` section for simplicity. Common styles are duplicated across files.
-
-## 📝 Common Tasks
-
-### Update Hospital/Volunteer Statistics
-In `index.html`, find the "Impact Statistics" section:
-```html
-<h3>[150+]</h3>
-<p>Active Volunteers</p>
-<span>from [25] countries</span>
-```
-
-### Add Portfolio Images
-In `portfolio.html`, add new gallery items:
+### Portfolio Products
+In `portfolio.html`, find the gallery-grid and add:
 ```html
 <div class="gallery-item" data-category="cards">
     <div class="gallery-image">
-        <div class="placeholder-img"></div>
+        <img src="images/comfort-kits/your-image.jpg" alt="Description">
     </div>
     <div class="gallery-item-info">
-        <h3>Item Title</h3>
+        <h3>Item Name</h3>
         <p>Description</p>
         <span class="item-category">Category</span>
     </div>
 </div>
 ```
 
-### Update Contact Information
-In `contact.html`, update placeholders:
-- Email: `[email@placeholder.com]`
-- Social media handles: `@[placeholder]`
-
-### Add FAQ Questions
-In `contact.html`, add new FAQ items following the existing pattern with the accordion structure.
-
-
-## 📰 Updating Worklog/Blog Posts
-
-### File Structure
-```
-worklog/
-├── pdfs/
-│   └── YYYY-MM-description.pdf      # PDF files with stories
-└── images/
-    └── YYYY-MM-description-preview.jpg   # Preview images (square recommended)
+### Behind-the-Scenes
+In `portfolio.html`, find the photo-grid section and add:
+```html
+<div class="photo-item">
+    <img src="images/behind-scenes/your-photo.jpg" alt="Description">
+    <div class="photo-caption">Caption text</div>
+</div>
 ```
 
-### How to Add a New Blog Post
+## 🔄 Common Updates
 
-1. **Prepare files:**
-   - PDF: Name as `YYYY-MM-description.pdf` (e.g., `2024-03-crafting-session.pdf`)
-   - Preview image: Same name + `-preview.jpg` (e.g., `2024-03-crafting-session-preview.jpg`)
-   - Place in respective folders
+### Update Statistics (index.html)
+Find and update numbers in square brackets:
+```html
+<h4>[150+]</h4>  <!-- Change to new number -->
+<p>Active Volunteers</p>
+```
 
-2. **Edit worklog.html:**
-   Copy this template and add before `</div>` of gallery-grid:
+### Add Navigation Links
+When adding new pages, update the nav menu in ALL HTML files:
+```html
+<a href="newpage.html" class="nav-link">New Page</a>
+```
+
+## ⚠️ Important Rules
+
+1. **DON'T edit between these markers in about.html:**
    ```html
-   <div class="gallery-item" onclick="openPDF('worklog/pdfs/YYYY-MM-description.pdf', 'Your Title Here')">
-       <div class="gallery-image">
-           <img src="worklog/images/YYYY-MM-description-preview.jpg" alt="Preview description">
-       </div>
-       <div class="gallery-item-info">
-           <h3>Your Title Here</h3>
-           <p>Brief description of the blog post</p>
-           <span class="item-category">Month Year</span>
-       </div>
-   </div>
+   <!-- Team Members -->
+   <!-- Team members end -->
    ```
+   Use the Java tool instead!
 
-3. **Replace:**
-   - `YYYY-MM-description` with your actual filename
-   - `Your Title Here` with the blog title (appears in lightbox)
-   - `Brief description` with 1-2 line summary
-   - `Month Year` with the date
+2. **ALL styles go in styles.css** - no `<style>` tags in HTML files
 
-## ⚠️ Important Notes
+3. **Image naming conventions:**
+   - Team photos: `firstname-lastname.jpg` (lowercase)
+   - Keep images under 500KB for fast loading
+   - Use descriptive names for other images
 
-1. **Always test locally** before uploading changes
-2. **Keep backups** before major updates
-3. **Member photos** should be appropriately sized and named
-4. **Don't edit** between the Team Members markers in about.html manually - use the Java tool
-5. **Mobile responsiveness** is built-in - test on different screen sizes
+4. **Test before uploading:**
+   - Check all links work
+   - Verify images display correctly
+   - Test on mobile (responsive design)
 
 ## 🐛 Troubleshooting
 
 ### Java Tool Issues
-- **"File not found"**: Check CSV filename matches exactly: `HiaB-Team-Info - Sheet1.csv`
-- **"Could not find markers"**: Ensure HTML markers haven't been deleted from about.html
-- **Photos not showing**: Check filename matches pattern (lowercase, hyphens, .jpg)
+- **"File not found"**: Ensure CSV is named exactly `HiaB-Team-Info - Sheet1.csv`
+- **Photos not showing**: Check filename matches (lowercase, no spaces)
 
-### Display Issues
-- **Cards not in grid**: Check markers are inside `<div class="members-grid">`
-- **Broken layout**: Validate HTML for unclosed tags
-- **Images stretched**: Ensure photos are square or near-square ratio
+### Layout Issues
+- **Broken grid**: Check for unclosed `<div>` tags
+- **Missing styles**: Ensure `<link rel="stylesheet" href="styles.css">` is in `<head>`
 
-## After Deploying Updates
-If changes don't appear immediately:
-1. Wait 5-10 minutes for GitHub Pages to update
-2. Hard refresh: Ctrl+Shift+R (Windows) or Cmd+Shift+R (Mac)
+### Article Issues
+- **Links not working**: Check file paths use `../` for parent directory
+- **Images not showing**: Verify path starts with `../images/`
 
 ## 📞 Need Help?
 
-- Check existing code patterns in the HTML files
-- Test changes locally first
-- Keep the file structure organized
-- Comment your code when adding complex features
+1. Check existing code for examples
+2. Keep backups before major changes
+3. Ask team lead if unsure
+4. Remember: The site should feel warm and handcrafted, not corporate!
 
 ## 🔄 Git Workflow (if using version control)
 

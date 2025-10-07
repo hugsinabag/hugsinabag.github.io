@@ -141,8 +141,12 @@
                     <img src="images/hospital-logos/boston-childrens.png" alt="Boston children's hospital">
                 </div>
 
-                <div class="partner-logo">
+                <div class="partner-logo has-description" onclick="toggleDescription(this)">
                     <img src="images/hospital-logos/bingyuge.png" alt="Bing Yu Ge - ALS patient mutual help platform">
+                    <div class="partner-description">
+                        <h3>Bing Yu Ge</h3>
+                        <p>Bingyu Ge was founded in 2016 by Ge Min, a dancer living with ALS. It is a warm and supportive community where people with ALS encourage and care for one another. Over the years, it has brought hope and strength to countless individuals and families affected by the disease.</p>
+                    </div>
                 </div>
 
             </div>
@@ -167,6 +171,31 @@
 
         hamburger.addEventListener('click', () => {
             navMenu.classList.toggle('active');
+        });
+
+        // Partner description toggle
+        function toggleDescription(element) {
+            const description = element.querySelector('.partner-description');
+            const isVisible = description.style.display === 'block';
+            
+            // Hide all other descriptions
+            document.querySelectorAll('.partner-description').forEach(desc => {
+                desc.style.display = 'none';
+            });
+            
+            // Toggle current description
+            if (!isVisible) {
+                description.style.display = 'block';
+            }
+        }
+
+        // Close descriptions when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.partner-logo')) {
+                document.querySelectorAll('.partner-description').forEach(desc => {
+                    desc.style.display = 'none';
+                });
+            }
         });
     </script>
 </body>

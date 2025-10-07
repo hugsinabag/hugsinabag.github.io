@@ -797,6 +797,8 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1rem;
     color: var(--darker-blue);
     transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
 }
 
 .partner-logo img {
@@ -810,6 +812,59 @@ h1, h2, h3, h4, h5, h6 {
 .partner-logo:hover {
     background-color: var(--secondary-beige);
     transform: translateY(-3px);
+}
+
+.partner-description {
+    display: none;
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    padding: 1.5rem;
+    background-color: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    text-align: left;
+}
+
+.partner-description::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid var(--white);
+}
+
+.partner-description h3 {
+    font-size: 1.1rem;
+    color: var(--dark-blue);
+    margin-bottom: 0.5rem;
+}
+
+.partner-description p {
+    font-size: 0.9rem;
+    color: var(--darker-blue);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.partner-logo.has-description {
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .partner-description {
+        width: 250px;
+        left: 0;
+        transform: translateX(-25%);
+    }
 }
 
 .lightbox {
